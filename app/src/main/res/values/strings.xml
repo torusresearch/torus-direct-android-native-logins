@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Torus Direct Native Logins</string>
+    <string name="torus_verifier_name">torus-android-google-native-login</string>
+    <string name="google_client_id">391189746290-q9683r2sgnflbguqivgkn3mvup9ue78c.apps.googleusercontent.com</string>
+</resources>
