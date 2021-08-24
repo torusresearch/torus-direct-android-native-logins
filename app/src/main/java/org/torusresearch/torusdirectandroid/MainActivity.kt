@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
             .requestId()
             .requestEmail()
             .requestProfile()
-            .requestScopes(Scope("openid"))
             .requestIdToken(getString(R.string.google_client_id))
             .build()
         googleSignInClient = GoogleSignIn.getClient(this, googleSignInOptions)
@@ -51,8 +50,7 @@ class MainActivity : AppCompatActivity() {
         // Always do fresh login to avoid duplicated token
         val account = GoogleSignIn.getLastSignedInAccount(this)
         if (account != null) {
-            googleSignInClient.revokeAccess()
-                .continueWith { googleSignInClient.signOut() }
+            googleSignInClient.signOut()
                 .addOnCompleteListener {
                     Log.d(javaClass.name, "sign_out:success")
                 }
